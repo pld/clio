@@ -7,7 +7,7 @@ h2. Installation
 
 * install the gem
 
-@gem install clio@
+@gem install clio-search@
 
 h2. Example
 
