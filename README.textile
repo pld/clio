@@ -1,7 +1,7 @@
 h1. clio
 
 Gem providing a API to search the Columbia Library ClIO Beta website.
-https://rubygems.org/gems/springer
+https://rubygems.org/gems/clio-search
 
 h2. Installation
 
