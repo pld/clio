@@ -31,6 +31,8 @@ class ClioTest < Test::Unit::TestCase
     results = e.search('nano fibers')
     results.each do |result|
       assert_equal result.title.class, String
+      assert_equal result.url.class, String
+      assert result.url.include? 'http://cliobeta.columbia.edu'
       assert [NilClass, String].include?(result.subtitle.class)
       assert [NilClass, String].include?(result.authors.class)
       assert_equal result.published.class, String

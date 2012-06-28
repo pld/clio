@@ -5,7 +5,7 @@ require 'nokogiri'
 require 'open-uri'
 
 
-ClioResult = Struct.new :title, :subtitle, :authors, :published, :online
+ClioResult = Struct.new :title, :url, :subtitle, :authors, :published, :online
 
 
 class Clio 
@@ -19,7 +19,8 @@ class Clio
   #   referer: (String)
   #   num_results: (Integer+)
 
-  API_PATH = "http://cliobeta.columbia.edu/catalog?&"
+  ROOT_URL = 'http://cliobeta.columbia.edu'
+  API_PATH = "#{ROOT_URL}/catalog?&"
 
   attr_accessor :referer, :num_results
 
@@ -64,6 +65,7 @@ class Clio
 
       ClioResult.new(
         tag_set[css_types[:title]].content,
+        ROOT_URL + tag_set[css_types[:title]]['href'],
         details['subtitle'],
         details['author'],
         details['published'],
