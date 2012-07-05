@@ -12,7 +12,7 @@ h2. Installation
 h2. Example
 
 @>> Clio.new.search('nantubes')@
-@=> [ #<Result:...>, ... ]@
+@=> [ #<ClioResult:...>, ... ]@
 
 h2. Ownership
 
